@@ -43,5 +43,33 @@ $rows | Group-Object TopFolder | Sort-Object Name | ForEach-Object {
 $totalGb = ($rows | Measure-Object SizeMB -Sum).Sum / 1024
 $summary += ""
 $summary += ("Total: {0} files, {1:N1} GB" -f $rows.Count, $totalGb)
+# Nested backup loops: every folder named like Desktop / Documents / Pictures / OneDrive / Backup,
+# wherever it sits, with how much is inside it and how deep it is.
+$loopPattern = '^(Desktop|Documents|My Documents|Pictures|OneDrive|SkyDrive|Backup|.*Dump)'
+$loopStats = @{}
+$maxDepth = 0
+$deepest = ''
+foreach ($r in $rows) {
+    $parts = $r.Path.Split('\')
+    if ($parts.Count -gt $maxDepth) { $maxDepth = $parts.Count; $deepest = $r.Path }
+    $prefix = ''
+    for ($i = 0; $i -lt $parts.Count - 1; $i++) {
+        $prefix = $(if ($i -eq 0) { $parts[0] } else { $prefix + '\' + $parts[$i] })
+        if ($parts[$i] -match $loopPattern) {
+            if (-not $loopStats.ContainsKey($prefix)) { $loopStats[$prefix] = @(0, 0.0) }
+            $loopStats[$prefix][0] += 1
+            $loopStats[$prefix][1] += $r.SizeMB
+        }
+    }
+}
+$summary += ""
+$summary += "Desktop / Documents / backup folders found at any depth (biggest first, top 150):"
+$summary += ("{0,8}  {1,9}  {2,5}  {3}" -f 'Files', 'GB', 'Depth', 'Folder')
+$loopStats.GetEnumerator() | Sort-Object { $_.Value[1] } -Descending | Select-Object -First 150 | ForEach-Object {
+    $summary += ("{0,8}  {1,9:N1}  {2,5}  {3}" -f $_.Value[0], ($_.Value[1] / 1024), $_.Key.Split('\').Count, $_.Key)
+}
+$summary += ""
+$summary += "Deepest file is $maxDepth folders down:"
+$summary += "  $deepest"
 $summary | Out-File (Join-Path $OutDir '12-onedrive-summary.txt') -Encoding ASCII
 $summary | ForEach-Object { Write-Host $_ }
