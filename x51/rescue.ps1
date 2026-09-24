@@ -18,11 +18,13 @@ $src = if ($Mode -eq 'Usb') { $gathered + '\' } else { 'C:\' }
 $skipRoots = @('Windows', 'Program Files', 'Program Files (x86)', 'ProgramData', '$Recycle.Bin',
     'System Volume Information', 'Recovery', 'PerfLogs', '$WINDOWS.~BT', '$Windows.~WS',
     '$SysReset', '$GetCurrent', 'Config.Msi', 'MSOCache', 'Windows.old\Windows',
-    'Windows.old\Program Files', 'Windows.old\Program Files (x86)', 'Windows.old\ProgramData')
+    'Windows.old\Program Files', 'Windows.old\Program Files (x86)', 'Windows.old\ProgramData',
+    'Drivers', 'MFG', 'OneDriveTemp', 'Dell', 'Intel', 'NVIDIA', 'AMD', 'Boot', 'ESD', 'SWSetup', 'Temp')
 # The folder these scripts were run from is left alone.
 $toolDir = Split-Path $PSScriptRoot -Parent
 if ($toolDir -like 'C:\*') { $skipRoots += $toolDir.Substring(3) }
-$skipNames = @('AppData', 'Application Data', 'Local Settings', 'IntelGraphicsProfiles', 'X51-Rescue')
+$skipNames = @('AppData', 'Application Data', 'Local Settings', 'IntelGraphicsProfiles', 'X51-Rescue',
+    'All Users', 'Default', 'Default User', '$WINDOWS.~BT', '$Windows.~WS', '$SysReset')
 if ($Mode -eq 'Gather') { $skipNames += 'X51-Gathered' }
 $skipFiles = @('pagefile.sys', 'hiberfil.sys', 'swapfile.sys', 'DumpStack.log.tmp', 'desktop.ini')
 $cloudOnly = 0x1000 -bor 0x400000 -bor 0x40000   # Offline, RecallOnDataAccess, RecallOnOpen
@@ -37,11 +39,9 @@ function Get-LocalFiles {
         foreach ($i in $items) {
             $r = if ($rel) { $rel + '\' + $i.Name } else { $i.Name }
             if ($i -is [System.IO.DirectoryInfo]) {
-                if ($i.Attributes -band [IO.FileAttributes]::ReparsePoint) {
-                    # Skip Windows shortcut-folders (junctions/links) but keep OneDrive folders.
-                    $lt = (Get-Item -LiteralPath ($src + $r) -Force -ErrorAction SilentlyContinue).LinkType
-                    if ($lt) { continue }
-                }
+                # Skip every linked folder (e.g. 'All Users' is really ProgramData) except OneDrive's own.
+                if (($i.Attributes -band [IO.FileAttributes]::ReparsePoint) -and
+                    $r -notmatch '^Users\\[^\\]+\\(OneDrive|SkyDrive)') { continue }
                 if ($skipRoots -contains $r) { continue }
                 if ($skipNames -contains $i.Name) { continue }
                 $stack.Push($r)
