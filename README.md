@@ -2,6 +2,10 @@
 
 Tools for inventorying, cleaning up and reusing an old Alienware X51 R2 (Windows 10 1909).
 
+## Failing drive? Run `5-rescue.bat` first
+
+Copies every file that exists only on this PC (user folders, inventory reports, browser bookmarks) to a USB drive, retrying unreadable spots only once. Skips OneDrive, whose files are in the cloud.
+
 ## x51 scripts
 
 | Script | What it does | Changes anything? |
