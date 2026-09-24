@@ -49,9 +49,12 @@ $totals = @{}
 foreach ($k in $dirs.Keys) { $totals[$k] = [long[]]$dirs[$k].Clone() }
 $ordered = $dirs.Keys | Sort-Object { ($_.Split('\')).Count } -Descending
 foreach ($k in $ordered) {
-    $parent = Split-Path $k -Parent
-    if ($parent -and $totals.ContainsKey($parent.TrimEnd('\'))) {
-        $p = $totals[$parent.TrimEnd('\')]; $c = $totals[$k]
+    # Plain text split - Split-Path chokes on names containing [ ] or other odd characters.
+    $cut = $k.LastIndexOf('\')
+    if ($cut -le 0) { continue }
+    $parent = $k.Substring(0, $cut)
+    if ($totals.ContainsKey($parent)) {
+        $p = $totals[$parent]; $c = $totals[$k]
         for ($x = 0; $x -lt 6; $x++) { $p[$x] += $c[$x] }
     }
 }
@@ -101,7 +104,7 @@ $rows | Where-Object { $_.PersonalGB -ge 0.025 -and $_.Folder -notmatch '^C:\\(W
 Add ''
 Add '=== Every folder named like OneDrive / SkyDrive ==='
 Add ('{0,9} {1,9} {2,11} {3,11}  {4}' -f 'Real GB', 'Files', 'Cloud GB', 'Cloud #', 'Folder')
-$rows | Where-Object { (Split-Path $_.Folder -Leaf) -match '(?i)onedrive|skydrive' } | Sort-Object Folder |
+$rows | Where-Object { $_.Folder.Substring($_.Folder.LastIndexOf('\') + 1) -match '(?i)onedrive|skydrive' } | Sort-Object Folder |
     ForEach-Object { Add ('{0,9:N2} {1,9:N0} {2,11:N1} {3,11:N0}  {4}' -f $_.RealGB, $_.RealFiles, $_.CloudOnlyGB, $_.CloudOnlyFiles, $_.Folder) }
 
 $L | Out-File $report -Encoding UTF8
