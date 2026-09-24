@@ -55,6 +55,8 @@ echo [2/10] Hardware
   wmic memphysical get maxcapacity,memorydevices | more
   echo === Graphics ===
   wmic path win32_videocontroller get name,driverversion,adapterram | more
+  echo === Disc drive ===
+  wmic cdrom get name,drive,mediatype,medialoaded,status | more
   echo === Network adapters ===
   wmic nic where "physicaladapter=true" get name,macaddress,speed | more
 ) > "%OUT%\02-hardware.txt" 2>&1
