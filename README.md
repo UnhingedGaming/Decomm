@@ -2,9 +2,13 @@
 
 Tools for inventorying, cleaning up and reusing an old Alienware X51 R2 (Windows 10 1909).
 
-## Failing drive? Run `5-rescue.bat` first
+## Failing drive? Rescue first
 
-Copies every file that exists only on this PC (user folders, inventory reports, browser bookmarks) to a USB drive, retrying unreadable spots only once. Skips OneDrive, whose files are in the cloud.
+1. `5-gather.bat` - finds every personal file on C: (wherever OneDrive scattered it) and moves it
+   into `Desktop\X51-Gathered`, keeping its original folders. Moving on the same drive only renames,
+   so it's gentle on a failing disk. OneDrive-folder files are copied instead. Every move is logged
+   in `_undo-list.csv`.
+2. `6-copy-to-usb.bat` - copies `X51-Gathered` onto one or more USB sticks, filling them in order.
 
 ## x51 scripts
 
