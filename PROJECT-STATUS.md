@@ -5,6 +5,23 @@ every "Claude - ... Cleanup" conversation in the Device Cleanup group. Update th
 file (and commit/push) whenever a device's status changes, so any conversation can
 read it cold instead of re-deriving state from chat history.
 
+## IRP / Huk situation — legal status
+
+Attorney and DA are already involved. Incident began approximately June 2023;
+IRP (Paul's entity) closed Dec 27, 2024. Given active legal involvement:
+
+- Do NOT delete, deduplicate, or "clean up" any IRP/Huk/Paul/Roof Experts/
+  Nations Renovations material found on any device (T480s and HP Z2 Mini are
+  the ones with confirmed related folders so far: `IRP Backup`,
+  `Ihor - TA PC Backup`, `Roof Experts - Local`)
+- Before running gather/cleanup scripts on T480s or HP Z2 Mini, check with the
+  attorney/DA whether they need a forensic image of those machines first -
+  a plain file copy is not the same thing
+- Quarantine (copy into its own untouched, clearly labeled folder), don't
+  delete, anything related, once cleared to proceed
+- This is a legal matter being handled by counsel - not something to
+  investigate or act on unilaterally here beyond preserving data
+
 ## End goal (decided 2026-09-25)
 
 Once every device below is inventoried and its real local files are identified,
