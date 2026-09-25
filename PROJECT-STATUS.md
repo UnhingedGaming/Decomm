@@ -5,6 +5,23 @@ every "Claude - ... Cleanup" conversation in the Device Cleanup group. Update th
 file (and commit/push) whenever a device's status changes, so any conversation can
 read it cold instead of re-deriving state from chat history.
 
+## End goal (decided 2026-09-25)
+
+Once every device below is inventoried and its real local files are identified,
+consolidate everything onto **one large external drive** (2-4TB) as a single
+clean, deduplicated master copy. Then create a **brand new Microsoft account**
+and set up OneDrive fresh against that master copy - no sync history, no
+inherited duplicates, no connection to the current melyssacass@gmail.com
+account or anything that ever touched the irperformance.com situation.
+
+The current melyssacass@gmail.com account (confirmed safe/not compromised) can
+be archived or closed later, once the new account is confirmed working. No
+rush on that step - it happens after the migration, not before.
+
+This does not change the immediate per-device work, just the destination: we're
+building toward the master drive + new account, not toward "fix the current
+OneDrive account."
+
 Account: **melyssacass@gmail.com** — Microsoft 365 Premium (active to Oct 2027),
 OneDrive 551 GB used of 1 TB. OneDrive cleanup itself is **on hold** until every
 device below is inventoried/rescued — see "OneDrive cloud" at the bottom.
