@@ -39,21 +39,22 @@ of the toolkit, and its own labeled output files (e.g. `T480S-Inventory`,
 - Next step: run `5-gather.bat`, review the found-files list before confirming
 
 ### Surface Laptop 5 — "LapTots" / "Surface" (main OneDrive-syncing device)
-- **Conversation:** none yet
-- **Folder:** none yet
-- **Status:** 🟡 In progress, informally, in the X51 conversation
+- **Conversation:** Claude - LapTots Cleanup (to start)
+- **Folder:** `laptots/`
+- **Status:** 🟡 In progress — scripts ready, mid-task from before the folder existed
 - This is the **primary machine** — 32GB/i7/1TB, holds a real local copy of the
   consolidated library at `C:\Users\Melys\OneDrive\!Laptots` (492 GB, 74,954 files:
   Documents 215GB incl. Gmail Takeout + Samsung phone backup + Outlook PST,
   Videos 144GB, Music 70GB, Pictures 63GB), plus `C:\!LOCAL - No One Drive` (12GB)
-- Full-PC report already run once (see chat history in X51 conversation);
-  renaming the local `OneDrive` folder to `!Laptots Library - LOCAL COPY` was
-  in progress, blocked by a file lock (suspect OneDrive setup / Outlook / a
-  music or photo app holding a handle) — needs a clean restart with OneDrive's
-  Startup Apps entry disabled first, then retry rename, then re-run OneDrive
-  setup pointed at a fresh empty folder
-- Should probably get promoted to its own conversation + `surface/` folder given
-  how central it is
+- Full-PC report already run once. Was mid-way through renaming the local
+  `OneDrive` folder to `!Laptots Library - LOCAL COPY` (so OneDrive can be signed
+  back in fresh, without merging into 75,000 existing local files) - blocked by a
+  file lock, suspected OneDrive setup / Outlook / a music-or-photo app holding a
+  handle open
+- Next: Task Manager → Startup apps → disable OneDrive (and Outlook/MusicBee/
+  digiKam if listed) → restart → retry rename → sign OneDrive in fresh (skip
+  "Back up your folders") → run `4-list-onedrive.bat` → compare against the
+  Alienware's old file list and the cloud's current contents
 
 ### HP Z2 Mini
 - **Conversation:** none yet

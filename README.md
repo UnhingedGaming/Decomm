@@ -18,6 +18,7 @@ Each device being decommissioned/inventoried gets its own folder with a copy of
 the same scripts, so reports never overwrite each other:
 - `x51/` - Alienware X51 R2 (Basestar-PC)
 - `t480s/` - Lenovo T480s
+- `laptots/` - Surface Laptop 5 ("LapTots"/"Surface" in Microsoft account) - the primary machine
 
 More folders (Surface, HP Z2 Mini, PowerSpec G731) get added the same way as we
 get to each one.
