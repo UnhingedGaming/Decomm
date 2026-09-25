@@ -36,6 +36,9 @@ of the toolkit, and its own labeled output files (e.g. `T480S-Inventory`,
 - **Flagged, not yet actioned:** business material mixed into personal files —
   IR Performance / IRP, Roof Experts, Nations Renovations, Paul Lewis, Anthony
   Cass, Ihor Huk. Needs a separate sort/decision pass.
+- Confirmed live connection: OneDrive setup on the LapTots (Surface) kept
+  defaulting to a work account, **Lyss@irperformance.com** - this is a real,
+  currently-connected account on at least one machine, not just old file names.
 - Next step: run `5-gather.bat`, review the found-files list before confirming
 
 ### Surface Laptop 5 — "LapTots" / "Surface" (main OneDrive-syncing device)
@@ -60,6 +63,9 @@ of the toolkit, and its own labeled output files (e.g. `T480S-Inventory`,
 - **Conversation:** none yet
 - **Folder:** none yet
 - **Status:** ⚪ Untouched — currently unplugged (safe, can't sync)
+- **Flagged:** user indicated this machine is "involved" in the IR Performance /
+  IRP / business-material situation (see below). Not detailed yet - revisit when
+  ready to get into it, alongside the T480s and LapTots findings.
 
 ### PowerSpec G731 — "GroomLake"
 - **Conversation:** none yet
