@@ -7,6 +7,29 @@ read it cold instead of re-deriving state from chat history.
 
 ## IRP / Huk situation — legal status
 
+**SECURITY WARNING - standing rule for ALL IRP-related material, every device:**
+Paul Lewis is known for planting backdoors via executables, "syncing" tools, and Excel files with malicious
+external data-source/update links. Rules for any IRP/Huk-related file, on any drive, any device, any
+conversation, from here forward:
+- NEVER execute or open any .exe file from IRP-related material
+- NEVER open .xlsx/.xls files in actual Excel - read them as raw zip/XML structure instead (xlsx is a zip
+  archive internally); opening in Excel risks triggering malicious external data links or legacy DDE links
+- NEVER run any installer, updater, or sync tool found in this material
+- If anything unexpected launches, or any unexpected network activity occurs, stop immediately and disconnect
+  the affected drive
+
+New context (2026-09-25): two external drives discovered - D:\ (1TB, 169GB free) and E:\ (2TB, 321GB free) -
+contain IRP/ARK/ARKoncepts business material organized (loosely) by person: Paul, Brandon, Kris, Nick,
+sales@IRP, plus Ihor's own material. Combined ~2.5TB used. Goal: consolidate onto one clean drive to hand to
+Huk directly - keep originals on D:/E: untouched (copy, don't move), preserve original names/structure (no
+dedup in this pass), oldest + most-organized version preferred when duplicates exist across drives.
+
+User reports an AI agent was previously used to "organize and zip" files on these drives and this is believed
+to be the source of file-naming corruption there (separate from, but possibly related to, the numeric-prefix
+issue found on the LapTots personal library - both may trace back to the same
+C:\Users\Melys\AppData\Roaming\Claude\local-agent-mode-sessions history, currently under investigation).
+
+
 Attorney involved. NJ DA opened an investigation in June 2023 when the IRP
 situation was discovered; case is currently **on hold** - DA told the user
 (~June 2026) that if she builds a case herself and hands it to them, they'll
