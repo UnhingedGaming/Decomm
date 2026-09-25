@@ -7,20 +7,32 @@ read it cold instead of re-deriving state from chat history.
 
 ## IRP / Huk situation — legal status
 
-Attorney and DA are already involved. Incident began approximately June 2023;
-IRP (Paul's entity) closed Dec 27, 2024. Given active legal involvement:
+Attorney involved. NJ DA opened an investigation in June 2023 when the IRP
+situation was discovered; case is currently **on hold** - DA told the user
+(~June 2026) that if she builds a case herself and hands it to them, they'll
+act on it. Until then it's deprioritized on their end.
 
-- Do NOT delete, deduplicate, or "clean up" any IRP/Huk/Paul/Roof Experts/
-  Nations Renovations material found on any device (T480s and HP Z2 Mini are
-  the ones with confirmed related folders so far: `IRP Backup`,
-  `Ihor - TA PC Backup`, `Roof Experts - Local`)
-- Before running gather/cleanup scripts on T480s or HP Z2 Mini, check with the
-  attorney/DA whether they need a forensic image of those machines first -
-  a plain file copy is not the same thing
-- Quarantine (copy into its own untouched, clearly labeled folder), don't
-  delete, anything related, once cleared to proceed
-- This is a legal matter being handled by counsel - not something to
-  investigate or act on unilaterally here beyond preserving data
+**Working rule (updated 2026-09-25):** proceed normally with cleanup/
+consolidation. Don't block on legal sign-off for ordinary personal files.
+The one standing rule: anything clearly IRP/Huk/Paul/Roof Experts/Nations
+Renovations related does not get deleted - it's potential case-building
+material for the user's own effort, not something to destroy, but it's also
+not a reason to freeze all other work. Quarantine it (copy into its own
+clearly labeled folder) when encountered, flag it, keep moving on everything
+else.
+
+Confirmed live connection: OneDrive setup on the LapTots (Surface) kept
+defaulting to a work account, **Lyss@irperformance.com** - a live connected
+account on at least one machine. User has locked down her own and related
+parties' accounts (Gmail personal/work, Microsoft, Xbox) but reports
+continued suspicious activity ("weird shit keeps happening") after lockdown -
+pointed toward persistent-access vectors that survive password resets
+(Workspace/365 admin-level access, mail forwarding/delegate rules, OAuth app
+grants) - user advised to check these specifically and document ongoing
+incidents for the attorney.
+
+Also flagged: HP Z2 Mini reported by user as "involved" in the situation -
+not yet detailed.
 
 ## End goal (decided 2026-09-25)
 
