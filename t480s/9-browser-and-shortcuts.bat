@@ -21,7 +21,7 @@ if not exist "%USB%:\" goto :bad
 taskkill /im chrome.exe /f >nul 2>&1
 taskkill /im msedge.exe /f >nul 2>&1
 
-set "DEST=%USB%:\Alienware Rescue\Browsers and Shortcuts"
+set "DEST=%USB%:\T480S Rescue\Browsers and Shortcuts"
 mkdir "%DEST%" 2>nul
 set "RC=/E /R:1 /W:1 /XJ /NP /NFL /NDL /NJH"
 set "NOCACHE=/XD Cache "Code Cache" GPUCache "Service Worker" ShaderCache GrShaderCache "Media Cache" "Application Cache" Crashpad "Safe Browsing" component_crx_cache"

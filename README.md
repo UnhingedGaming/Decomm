@@ -10,6 +10,16 @@ Tools for inventorying, cleaning up and reusing an old Alienware X51 R2 (Windows
    in `_undo-list.csv`.
 2. `6-copy-to-usb.bat` - copies `X51-Gathered` onto one or more USB sticks, filling them in order.
 
+## Devices
+
+Each device being decommissioned/inventoried gets its own folder with a copy of
+the same scripts, so reports never overwrite each other:
+- `x51/` - Alienware X51 R2 (Basestar-PC)
+- `t480s/` - Lenovo T480s
+
+More folders (Surface, HP Z2 Mini, PowerSpec G731) get added the same way as we
+get to each one.
+
 ## x51 scripts
 
 | Script | What it does | Changes anything? |
