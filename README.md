@@ -10,6 +10,8 @@ Tools for inventorying, cleaning up and reusing an old Alienware X51 R2 (Windows
    in `_undo-list.csv`.
 2. `6-copy-to-usb.bat` - copies `X51-Gathered` onto one or more USB sticks, filling them in order.
 
+See **[PROJECT-STATUS.md](PROJECT-STATUS.md)** for current status per device and the OneDrive account - update it whenever something changes so any conversation can read state without re-deriving it from chat history.
+
 ## Devices
 
 Each device being decommissioned/inventoried gets its own folder with a copy of
