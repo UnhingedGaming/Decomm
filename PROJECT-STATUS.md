@@ -142,6 +142,23 @@ of the toolkit, and its own labeled output files (e.g. `T480S-Inventory`,
 - Next: resolve the T480s report-origin question, then decide dedup approach for
   the 1,224-item Library folder (many are timestamped near-duplicates)
 
+- **Root cause of the June 2026 file-flattening/renaming mess, per user (2026-09-28): THREE separate things
+  were involved, not one** - OneDrive's own sync/conflict behavior, a ChatGPT agent, and a separate Claude
+  agent session (likely the local-agent-mode-sessions history already partially investigated) all reorganized/
+  renamed files around that time. This explains the scale and inconsistency of the damage (numeric-prefix
+  renames on personal files, the "organize and zip" mess on D:/E:) - multiple uncoordinated automated tools
+  touched the same file trees. Reinforces: verify contents before deleting anything found during cleanup,
+  even things that look like obvious junk (e.g. .BackupManager folders) - don't assume based on general
+  pattern alone given how many hands have been in this data.
+
+- **New: LapTots is being sold (2026-09-28), buyer offering $1,000, ASAP timeline.** Plan: copy everything off
+  (Library, Documents, Desktop, !LOCAL - No One Drive) via Google Drive (Stream mode, 5TB plan, 2.34TB already
+  used - suspected largely Samsung phone backup duplication, unconfirmed) since no spare physical drive is on
+  hand. C:-vs-G: name+size duplicate comparison run to avoid re-uploading what's already there. Google Drive
+  sync hit ~5,000 errors, root-caused to .BackupManager folders being unsyncable (OneDrive's internal tracking
+  data, not personal content) - verifying contents of a sample before deleting from the G: copy. IMPORTANT:
+  laptop must not be wiped/reset until the Google Drive upload is fully confirmed complete (not just locally
+  copied into the Drive folder) - upload time depends on internet speed, separate from the fast local copy step.
 ### HP Z2 Mini
 - **Conversation:** none yet
 - **Folder:** none yet
