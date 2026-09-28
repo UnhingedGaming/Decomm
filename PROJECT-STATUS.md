@@ -156,9 +156,12 @@ of the toolkit, and its own labeled output files (e.g. `T480S-Inventory`,
   used - suspected largely Samsung phone backup duplication, unconfirmed) since no spare physical drive is on
   hand. C:-vs-G: name+size duplicate comparison run to avoid re-uploading what's already there. Google Drive
   sync hit ~5,000 errors, root-caused to .BackupManager folders being unsyncable (OneDrive's internal tracking
-  data, not personal content) - verifying contents of a sample before deleting from the G: copy. IMPORTANT:
-  laptop must not be wiped/reset until the Google Drive upload is fully confirmed complete (not just locally
-  copied into the Drive folder) - upload time depends on internet speed, separate from the fast local copy step.
+  data, not personal content) - verifying contents of a sample before deleting from the G: copy.
+  **2026-09-28 (later same day): Google Drive icon confirmed "Up to date" - the full overnight upload is
+  complete.** The upload-in-progress blocker on wiping/resetting the laptop is now cleared. Before actually
+  wiping: worth a spot-check that folder/file counts in `G:\My Drive\LapTots Consolidation` on drive.google.com
+  (web, not just the desktop client) match the local source folders, since "Up to date" reflects the client's
+  view, not an independent byte-for-byte verification.
 ### HP Z2 Mini
 - **Conversation:** none yet
 - **Folder:** none yet
