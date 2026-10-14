@@ -162,6 +162,27 @@ of the toolkit, and its own labeled output files (e.g. `T480S-Inventory`,
   wiping: worth a spot-check that folder/file counts in `G:\My Drive\LapTots Consolidation` on drive.google.com
   (web, not just the desktop client) match the local source folders, since "Up to date" reflects the client's
   view, not an independent byte-for-byte verification.
+- **UNRESOLVED (2026-09-28/29): user reported files "missing"/"scattered" on C:\, "more copies of OneDrive"
+  appearing.** Leading hypothesis: OneDrive got signed back in and started a fresh sync against a non-empty
+  folder, recreating the same conflict/duplicate-folder failure mode as the original flattening incident,
+  rather than anything malicious. A detailed handoff brief was given for the local Surface session to run
+  (read-only): `4-list-onedrive.bat`, `1-inventory.bat`, and a raw `dir /s /b /ad C:\ | findstr /i onedrive`
+  listing, plus confirming whether `!Laptots Library - LOCAL COPY` is still intact and whether a *new* `OneDrive`
+  folder now exists alongside it. **No results were ever reported back before the session was lost** - this
+  still needs to be run/re-run and the findings actually reviewed. Do not wipe/sell the laptop until this is
+  resolved.
+- **New (2026-09-28/-30): external drive "Backpack" (WD-chipset-adjacent XinTop XT-U33502 bridge, 465.75GB
+  usable) set up as local backup storage** - was found as RAW/blank (user confirmed hard-formatted 5/15/26,
+  no data at risk), initialized GPT + NTFS quick-formatted, assigned drive letter **K:**. SMART health checked
+  via PowerShell (`Get-PhysicalDisk`, `Get-StorageReliabilityCounter`) - **Healthy, 0 wear, no errors** on both
+  this drive and the Surface's internal SK Hynix SSD. Intended use: replacement for the old Seagate GoFlex Home
+  as simple local backup storage (not network-shared - user confirmed local-only is fine). Not yet used to
+  actually copy anything.
+- **Separate, unresolved: a different drive (WD 160GB SATA, pulled from/intended to replace the GoFlex Home)
+  is not being detected by Windows.** Has a legacy jumper block (SSC/PM/OPT1/OPT2) - default/correct
+  configuration is no jumper installed, so the jumper is unlikely to be the actual cause. Troubleshooting was
+  mid-way (checking Device Manager, cable/port/power) when this thread was dropped - **still needs: does it
+  show in Device Manager at all, and does it carry data from the GoFlex Home that needs careful handling.**
 ### HP Z2 Mini
 - **Conversation:** none yet
 - **Folder:** none yet
